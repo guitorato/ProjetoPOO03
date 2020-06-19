@@ -4,14 +4,25 @@
     Author     : guih_
 --%>
 
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Projeto POO 03 - Quiz</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Projeto POO 03 - Quiz!</h1>
+        <h2>Index</h2>
+        <%
+        ArrayList<>
+        %>
+        <table border="1">
+            <tr>
+                <th>Nome de usuário</th>
+                <th>Login</th> 
+            </tr>
+        </table>
     </body>
 </html>
