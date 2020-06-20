@@ -5,6 +5,7 @@
  */
 package br.gov.sp.fatec.config;
 
+import br.gov.sp.fatec.model.Category;
 import br.gov.sp.fatec.model.User;
 import java.sql.DriverManager;
 import java.sql.Connection;
