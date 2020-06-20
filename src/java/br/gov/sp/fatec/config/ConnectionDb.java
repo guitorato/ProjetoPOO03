@@ -9,7 +9,6 @@ import br.gov.sp.fatec.model.Category;
 import br.gov.sp.fatec.model.User;
 import java.sql.DriverManager;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.Statement;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -19,7 +18,7 @@ import javax.servlet.ServletContextListener;
  * @author guih_
  */
 public class ConnectionDb implements ServletContextListener {
-    public static final String jdbcUrl = "jdbc:sqlite:C:\\Users\\rlarg\\fincansys.db";
+    public static final String jdbcUrl = "jdbc:sqlite:C:\\Users\\guih_\\projeto.db";
     
     public static String exceptionMessage = null;
     
