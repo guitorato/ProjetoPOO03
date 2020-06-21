@@ -5,7 +5,6 @@
  */
 package br.gov.sp.fatec.config;
 
-import br.gov.sp.fatec.model.Category;
 import br.gov.sp.fatec.model.User;
 import java.sql.DriverManager;
 import java.sql.Connection;
@@ -46,36 +45,6 @@ public class ConnectionDb implements ServletContextListener {
                 stmt.executeUpdate("INSERT INTO users(name, login, password_hash, role)"
                         + "VALUES ('Fulano da Silva', 'fulano', "+"123456".hashCode()+", 'USER')");
             }
-            
-            step = "Table 'categories' creation";
-            stmt.executeUpdate("CREATE TABLE IF NOT EXISTS categories("
-                    + "name VARCHAR(50) PRIMARY KEY,"
-                    + "description VARCHAR(200) NOT NULL"
-                    + ")");
-            if(Category.getCategories().isEmpty()){
-                step = "Default categories creation";
-                stmt.executeUpdate("INSERT INTO categories(name, description)"
-                        + "VALUES ('Moradia', 'Gastos com aluguel, UPTU, luz, água, etc')");
-                stmt.executeUpdate("INSERT INTO categories(name, description)"
-                        + "VALUES ('Alimentação', 'Gatsos com mercado, restaurantes, etc')");
-                stmt.executeUpdate("INSERT INTO categories(name, description)"
-                        + "VALUES ('Educação', 'Gastos com formação profissional')");
-                stmt.executeUpdate("INSERT INTO categories(name, description)"
-                        + "VALUES ('Lazer', 'Gastos com viagens, baladas, hobbies, etc')");
-                stmt.executeUpdate("INSERT INTO categories(name, description)"
-                        + "VALUES ('Receita', 'Proventos de quaisquer tipos')");
-            }
-            
-            step = "Table 'transactions' creation";
-            stmt.executeUpdate("CREATE TABLE IF NOT EXISTS transactions("
-                    + "datetime VARCHAR(25) PRIMARY KEY,"
-                    + "description VARCHAR(200) NOT NULL,"
-                    + "category VARCHAR(50) NOT NULL,"
-                    + "value NUMERIC(10,2) NOT NULL,"
-                    + "origin VARCHAR(200) NOT NULL,"
-                    + "FOREIGN KEY(category) REFERENCES categories(name)"
-                    + ")");
-            
             stmt.close();
             con.close();
         }catch(Exception ex){
