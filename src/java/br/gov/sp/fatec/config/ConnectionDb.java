@@ -6,13 +6,14 @@
 package br.gov.sp.fatec.config;
 
 import br.gov.sp.fatec.model.User;
-import java.sql.DriverManager;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.Statement;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 /**
+ * Web application lifecycle listener.
  *
  * @author guih_
  */

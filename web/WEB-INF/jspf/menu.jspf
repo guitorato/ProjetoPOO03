@@ -12,7 +12,7 @@ if(request.getParameter("session.login") != null){
         if(user == null){
             errorMessage = "Login/password incorrect";
         }else{
-            session.setAttribute("user.login", login);
+            session.setAttribute("user.login", user.getLogin());
             session.setAttribute("user.name", user.getName());
             session.setAttribute("user.role", user.getRole());
             response.sendRedirect(request.getRequestURI());
