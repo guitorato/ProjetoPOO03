@@ -10,7 +10,7 @@ if(request.getParameter("session.login") != null){
     try{
         User user = User.login(login, password);
         if(user == null){
-            errorMessage = "Login/password incorrect";
+            errorMessage = "Login/password incorreto";
         }else{
             session.setAttribute("user.login", user.getLogin());
             session.setAttribute("user.name", user.getName());
@@ -33,7 +33,7 @@ if(request.getParameter("session.login") != null){
     <form method="post">
         Usuário: <input type="text" name="user.login" />
         Password: <input type="password" name="user.password" />
-        <input type="submit" name="session.login" value="Log in"/>
+        <input type="submit" name="session.login" value="Logar"/>
     </form>
     <%if(errorMessage != null){%>
     <div style="color:red"><%= errorMessage %></div>
@@ -41,13 +41,13 @@ if(request.getParameter("session.login") != null){
 <%}else{%>
     <form>
         <a href="<%=request.getContextPath()%>/index.jsp">INDEX</a>
-        | <a href="<%=request.getContextPath()%>/categories.jsp">CATEGORIAS</a>
-        | <a href="<%=request.getContextPath()%>/transactions.jsp">TRANSAÇÕES</a>
+        | <a href="">CATEGORIAS</a>
+        | <a href="">TRANSAÇÕES</a>
         <%if(session.getAttribute("user.role").equals("ADMIN")){%>
             [[ <a href="<%=request.getContextPath()%>/restricted/users.jsp">USUÁRIOS||</a> ]]
         <%}%>
         || Bem vindo, <u><a href="<%=request.getContextPath()%>/me.jsp"><%= session.getAttribute("user.name") %></a></u>
-        <input type="submit" name="session.logout" value="Log out" />
+        <input type="submit" name="session.logout" value="Deslogar" />
     </form>
 <%}%>
 <%if(ConnectionDb.exceptionMessage != null){%>
